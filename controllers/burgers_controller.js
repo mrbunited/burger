@@ -14,16 +14,31 @@ router.get("/", function(req, res) {
     console.log(hbsObject);
     res.render("index", hbsObject);
   });
+});
 
-  router.post("/api/burgers", function(req, res) {
-    cat.create([
-      "burger_name"
+
+  router.post("/", function(req, res) {
+    burger.create([
+      "burger_name", "devoured"
     ], [
-      req.body.name, req.body.sleepy
+      req.body.burger_name, req.body.devoured
     ], function(result) {
       // Send back the ID of the new quote
       res.json({ id: result.insertId });
     });
   });
-});
+
+
+  router.put("/:id", function (req, res) {
+    var id = req.params.id;
+
+    console.log("id", id);
+
+    burger.update(id, function () {
+        res.redirect("/");
+    });
+    
+  });
+
+
 module.exports = router;
