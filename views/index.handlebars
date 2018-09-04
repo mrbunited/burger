@@ -13,7 +13,7 @@
   <p>
    
 {{this.id}}. {{this.burger_name}}
-      <button burger-id="{{this.id}}" class="change-state" id="update">Devour it!!</button>
+      <button burger-id="{{this.id}}" name="change-state"> Devour it!! </button>
  </p> 
   {{/unless}}
  {{/each}}
@@ -56,22 +56,19 @@
 $(function() {
 
 
-  $("#new").on("submit", function(event) {
+  $(".create-form").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
-    var name = $("[name=burger-name]").val().trim();
-    if (name !==""){
-
-      var newBurger ={
-        name: name
-      }
-    }
+      var newBur = {
+      burger_name: $("#burger-name").val().trim(),
+      devoured: 0
+    };
 
     // Send the POST request.
     $.ajax("/api/burgers", {
       type: "POST",
-      data: newBurger
+      data: newBur
     }).then(
       function() {
         console.log("created new burger");
