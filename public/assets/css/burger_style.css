@@ -1,0 +1,24 @@
+body{
+text-align: center;
+background-image: url(../img/fries.jpg);
+
+
+}
+
+.main{
+max-width: 1000px;
+margin: auto;
+font-size: 40px;
+font-family: 'Acme', sans-serif;
+}
+
+.item{
+    border-radius: 25px;
+    background: #73AD21;
+    padding: 20px; 
+    margin: 20px;
+    width: 400px;
+    height: 100px; 
+    list-style: none;
+} 
+

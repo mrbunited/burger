@@ -1,7 +1,6 @@
+<div class="main">
+<img src="/assets/img/burger.png" alt="burger" height="200" width="200">
 <h1>Your Burgers List</h1>
-
-
-
 
  <section class="row">
         <div class="col-md-6">
@@ -10,7 +9,7 @@
 <ul>
   {{#each burgers}}
  {{#unless devoured}}
-{{> burgers/burger-block}}
+{{> burgers/burger-block }}
   {{/unless}}
  {{/each}}
 </ul>
@@ -22,7 +21,7 @@
 <ul>
   {{#each burgers}}
  {{#if devoured}}
-{{> burgers/burger-block}}
+{{> burgers/burger-block }}
 {{/if}}
  {{/each}}
 </ul>
@@ -40,3 +39,4 @@
   </div>
   <button type="submit" id="new">Add a burger</button>
 </form>
+</div>
